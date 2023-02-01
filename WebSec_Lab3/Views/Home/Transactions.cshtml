@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WebSec_Lab3.Models.IPN>
+
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+<div b-6eg8tbgho9="" class="container">
+        <div b-6eg8tbgho9="" style="text-align: center;">
+            <div b-6eg8tbgho9="" class="display-6"><strong b-6eg8tbgho9="">Deck Master</strong></div>
+        </div>
+        <hr b-6eg8tbgho9="">
+        <main b-6eg8tbgho9="" role="main" class="pb-3">
+
+<div class="" style="">
+    <div class="row">
+        <div class="col-sm-6" style="">
+            <span class="display-6">Transactions</span>
+        </div>
+        <div class="col-sm-6" style="">
+            <span class="d-flex justify-content-end">
+                <img src="/images/paypal.png" alt="PayPal" style="max-width: 200px;padding-bottom: 10px;">
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.paymentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.create_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payerFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payerEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.paymentMethod)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.paymentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.create_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payerFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount)
+                @Html.DisplayFor(modelItem => item.currency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.paymentMethod)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
